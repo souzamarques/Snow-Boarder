@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 892234021}
   - component: {fileID: 892234025}
   - component: {fileID: 892234026}
+  - component: {fileID: 892234027}
   m_Layer: 0
   m_Name: Snowboarder
   m_TagString: Untagged
@@ -474,8 +475,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.02
+  m_AngularDrag: 0.035
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -531,6 +532,19 @@ CircleCollider2D:
   m_Offset: {x: 2.4645123, y: 0.973537}
   serializedVersion: 2
   m_Radius: 0.3309753
+--- !u!114 &892234027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892234020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccebecb0a94fc38daef2784b78b33ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torqueAmount: 3.5
 --- !u!1 &1715347826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1245,7 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 10
+  m_Speed: 15
   m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
