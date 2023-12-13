@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
+    [SerializeField] float loadDelay = 1.3f;
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(0); 
+        Invoke("ReloadScene", loadDelay); 
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
