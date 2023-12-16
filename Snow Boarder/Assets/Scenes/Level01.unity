@@ -9985,7 +9985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.157109, y: 0.50999993, z: -10}
+  m_LocalPosition: {x: -8.145086, y: 0.50999993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10382,8 +10382,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.02
-  m_AngularDrag: 0.035
+  m_LinearDrag: 0.09
+  m_AngularDrag: 0.12
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 1
@@ -10453,6 +10453,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torqueAmount: 3.5
+  standardSpeed: 15
+  boostSpeed: 25
 --- !u!114 &892234028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10866,7 +10868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715347826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.157109, y: 0.50999993, z: -10}
+  m_LocalPosition: {x: -8.145086, y: 0.50999993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
