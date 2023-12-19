@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other) 
     {
-        if(other.gameObject.tag != "Ground")
+        if(other.gameObject.tag == "Ground")
         {
             snow.Stop();
             isGrounded = false;
