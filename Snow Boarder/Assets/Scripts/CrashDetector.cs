@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
+    private ParticleSystem snowParticleSystem;    
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] float loadDelay = 1.3f;
 
@@ -12,6 +13,10 @@ public class CrashDetector : MonoBehaviour
     {
         if(other.tag == "Ground")
         {
+            Player player = GetComponent<Player>();
+            snowParticleSystem = player.snow;
+            snowParticleSystem.Stop();
+
             crashEffect.Play();
             Invoke("ReloadScene", loadDelay);
         }    

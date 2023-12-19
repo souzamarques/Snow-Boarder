@@ -6,10 +6,13 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     SurfaceEffector2D surfaceEffector2D;
+    public ParticleSystem snow;
 
     [SerializeField] float torqueAmount = 3.5f;
     [SerializeField] float standardSpeed = 15f;
     [SerializeField] float boostSpeed = 25f;
+
+    private bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -43,5 +46,34 @@ public class Player : MonoBehaviour
             surfaceEffector2D.speed = boostSpeed;
         else
             surfaceEffector2D.speed = standardSpeed;
+    }
+
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            snow.Play();    
+            isGrounded = true;
+        }    
+    }
+
+    void OnCollisionExit2D(Collision2D other) 
+    {
+        if(other.gameObject.tag != "Ground")
+        {
+            snow.Stop();
+            isGrounded = false;
+        }
+    }
+
+    void FixedUpdate() 
+    {
+        if(!isGrounded)
+            snow.Stop();    
+    }
+
+    public ParticleSystem GetSnowParticleSystem()
+    {
+        return snow;
     }
 }
