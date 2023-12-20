@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] float boostSpeed = 25f;
 
     private bool isGrounded;
+    private bool isMove = true;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +26,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
-        RespondToBoost();
+        if(isMove)
+        {
+            RotatePlayer();
+            RespondToBoost();
+        }
+    }
+
+    public void DisableControls()
+    {
+        isMove = false;
     }
 
     void RotatePlayer()

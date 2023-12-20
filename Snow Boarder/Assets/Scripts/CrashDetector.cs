@@ -18,6 +18,7 @@ public class CrashDetector : MonoBehaviour
             snowParticleSystem = player.snow;
             snowParticleSystem.Stop();
 
+            FindObjectOfType<Player>().DisableControls();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
             Invoke("ReloadScene", loadDelay);
