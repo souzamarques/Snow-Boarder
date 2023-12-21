@@ -9,6 +9,7 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] AudioClip crashSFX;
     [SerializeField] float loadDelay = 1.3f;
+    public bool hasCrashed = true;
 
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -18,9 +19,13 @@ public class CrashDetector : MonoBehaviour
             snowParticleSystem = player.snow;
             snowParticleSystem.Stop();
 
-            FindObjectOfType<Player>().DisableControls();
-            crashEffect.Play();
-            GetComponent<AudioSource>().PlayOneShot(crashSFX);
+            if(hasCrashed)
+            {
+                FindObjectOfType<Player>().DisableControls();
+                crashEffect.Play();
+                GetComponent<AudioSource>().PlayOneShot(crashSFX);
+                hasCrashed = false;
+            }
             Invoke("ReloadScene", loadDelay);
         }    
     }

@@ -62,8 +62,15 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.tag == "Ground")
         {
-            snow.Play();    
-            isGrounded = true;
+            bool isCrash;
+            CrashDetector crash = GetComponent<CrashDetector>();
+            isCrash = crash.hasCrashed; 
+
+            if(isCrash)
+            {
+                snow.Play();    
+                isGrounded = true;
+            }
         }    
     }
 
